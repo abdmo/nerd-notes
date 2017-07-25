@@ -17,3 +17,16 @@ M-g g
 > go to char
 M-g c
 <char number>x
+
+-- magit --
+
+> staging
+s
+
+> committing
+c c
+<commit-message>
+C-c C-c
+
+> pushing to master
+P p
