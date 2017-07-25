@@ -1,5 +1,9 @@
 -- emacs cheat sheit --
 
+> mkdir
+M-x make-directory
+<dir-name>
+
 > save all buffers
 C-x s
 
