@@ -1,1 +1,15 @@
-your life is emptier than this file - gandhi, 2017
+-- emacs cheat sheit --
+
+> save all buffers
+C-x s
+
+> save current buffer
+C-x C-s
+
+> go to line
+M-g g
+<line number>
+
+> go to char
+M-g c
+<char number>x
