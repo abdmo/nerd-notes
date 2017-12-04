@@ -1,0 +1,33 @@
+#+OPTIONS: toc:3
+
+** About
+   Personal note on everything I've learned about coding so I don't forget
+
+** AWS
+
+*** Host stuff on Amazon EC2
+
+**** Setup virtual host
+    1. Go to https://aws.amazon.com/ and create account
+    2. On console page, change region to the suitable choice
+    3. Click "Launch Instance"
+    4. Choose Ubuntu 16.04 LTS
+    5. Default choice on "Instance Type", "Configure Instance Details", "Tag Instance" and "Add Storage"
+    6. On "Configure Security Group", create rule HTTP (Port: 80, Range: Anywhere) and HTTPS (Port: 443, Range: Anywhere)
+    7. Click "Launch"
+    8. Choose "Create a new keypair" and download the .pem file and save it in ~/.ssh/
+    9. Click "Launch Instance"
+
+**** SSH to the EC2 virtual host
+     1. Change permission on .pem file
+	#+BEGIN_SRC 
+	$ chmod 600 ~/.ssh/<key.pem>
+	#+END_SRC
+     2. SSH
+	#+BEGIN_SRC 
+	$ ssh -i ~/.ssh/<key.pem> <user>@<ec2-public-dns>
+	#+END_SRC
+     3. Copy source to the virtual host
+	#+BEGIN_SRC 
+	$ scp -i ~/.ssh/<key.pem>/ -r ~/dev/<source-dir> <user>@<ec2-public-dns>:~/dev/<destination-dir>/
+	#+END_SRC
